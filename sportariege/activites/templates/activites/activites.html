@@ -1,0 +1,7 @@
+{% extends 'activites/base.html' %}
+
+{% block content %}
+{% for typeActivite in activites %}
+<li><a href="{% url 'activites:activite' Activite=typeActivite.typeActivite %}">{{ typeActivite }}</a></li>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'activites/base.html' %}
+
+{% block content %}
+
+
+<section class="hero is-dark is-fullheight-with-navbar">
+    
+    <section id="{{ typeActivite }}" class="hero-head">
+        <div>
+            {% for typeActivite in activites %}
+            <a href="{% url 'activites:activite' Activite=typeActivite.typeActivite %}">
+                <span class="title is-1">{{ typeActivite }}</span>
+            </a>
+            {% endfor %}
+            <span class="title is-1">.ARIÈGEPYRÉNÉES</span>
+        </div>
+    </section>
+    
+    <div class="columns">
+        <div class="column is-12">
+            <form action="{% url 'administration:activites' %}" method="post">
+                {% csrf_token %}
+                <p class="title is-1">ACTIVITES</p>
+                
+                <div class="field">
+                    <label class="label">NOM ACTIVITE</label>
+                    <div class="control">
+                        <input name="nomActivite" value="" id="nomActivite" class="input" type="text" placeholder="Nom Activité">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="typeActivite" class="label">Type d'activité</label>
+                    <div class="control">
+                        <div name="typeActivite" id="typeActivite" class="select">
+                            <select>
+                                {% for typeActivite in activites %}
+                                <option value="">{{ typeActivite }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Prestataire Activité</label>
+                    <div class="control">
+                        <div name="prestataire" id="prestataire" class="select">
+                            <select>
+                                {% for nomPrestataire in prestataires %}
+                                <option value="">{{ nomPrestataire }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Tarif</label>
+                    <div class="control">
+                        <input name="tarif" value="" id="tarif"  class="input" type="text" placeholder="Tarif">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">RDV</label>
+                    <div class="control">
+                        <input name="rdv" value="" id="rdv" class="input" type="text" placeholder="Lieu RDV">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Lien Img</label>
+                    <div class="control">
+                        <input name="lienImg" value="" id="lienImg" class="input" type="text" placeholder="Lien IMG">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Date</label>
+                    <div class="control">
+                        <input name="date" value="" id="date" class="input" type="date" name="date" placeholder="jj/mm/aaaa">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="control">
+                        <button type="submit" class="button is-link">Envoyer</button>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

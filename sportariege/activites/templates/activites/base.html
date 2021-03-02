@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'activites/css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'activites/node_modules/bulma-carousel/dist/css/bulma-carousel.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'activites/css/style.css' %}" />
+
+
+    <title>Sport-Ariège</title>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <nav class="navbar is-fixed-top is-transparent" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="menu-principal">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="menu-principal" class="navbar-menu">
+            <div class="navbar-start">
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href="{% url 'activites:activites' %}">Activités</a>
+                    <div class="navbar-dropdown">
+                        {% for typeActivite in activites %}
+                        <a class="navbar-item" href="{% url 'activites:activite' Activite=typeActivite.typeActivite %}">{{ typeActivite }}</a>
+                        {% endfor %}
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">Formules</a>
+                    </div>
+                </div>
+
+
+
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">Séjours</a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">Hébergements</a>
+                        <hr class="navbar-divider">
+                        <a class="navbar-item">Packs</a>
+                    </div>
+                </div>
+
+                <a class="navbar-item">Souvenirs</a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-primary"><strong>Se connecter</strong></a>
+                    </div>
+                </div>
+                <a class="navbar-item" href="{% url 'administration:index' %}">ADMIN</a>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="{% static 'activites/node_modules/bulma-carousel/dist/js/bulma-carousel.min.js' %}"></script>
+    <script type="text/javascript">
+        const carousels = bulmaCarousel.attach('.carousel', {
+            slidesToShow: 1,
+            navigation: false,
+            pagination: false,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 6000,
+        });
+
+        // To access to bulmaCarousel instance of an element
+        const element = document.querySelector('#index');
+        if (element && element.bulmaCarousel) {
+            // bulmaCarousel instance is available as element.bulmaCarousel
+        }
+    </script>
+</body>
+
+</html>

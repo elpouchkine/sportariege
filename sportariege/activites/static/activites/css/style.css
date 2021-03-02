@@ -1,0 +1,93 @@
+.hero-head {
+    background-color: #FE2E4D;
+    z-index: 2;
+}
+
+.hero-head .title{
+    color: #fff;
+}
+
+
+.hero-foot .box{
+    background-color: transparent;
+}
+
+.hero-foot{
+    z-index: 2;
+    padding: 1.2em;
+    background-color: #DDD4D1;
+    color: #222B2E;
+}
+
+
+#acceuil{
+    background-color: #222B2E;
+    background-attachment: fixed;
+}
+
+p,
+.hero-head {
+    text-align: justify;
+}
+
+.box.is-dark
+.hero.is-dark {
+    background-color: #222B2E;
+}
+
+.box.is-transparent {
+    background-color: transparent;
+}
+
+.block.is-padded {
+    padding: 2em;
+    text-align: center;
+}
+
+.block.is-centered {
+}
+
+.card p,
+.card .subtitle,
+.card .title,
+.label{
+    text-align: justify;
+    color: #DDD4D1;
+    mix-blend-mode: difference;
+}
+
+
+
+#main-block {
+    height: 100em;
+}
+
+.card::first-letter,
+li::first-letter,
+.navbar-item,
+.title {
+    text-transform: capitalize;
+}
+
+.carousel {
+}
+
+.card-content{
+    z-index: 1;
+    background-color: #222B2E;
+}
+
+
+#article-index {
+    z-index: 1;
+    background-color: #222B2E;
+}
+
+.slider {
+    width: 105%;
+}
+
+.slider-navigation-previous,
+.slider-navigation-next {
+    display: none;
+}

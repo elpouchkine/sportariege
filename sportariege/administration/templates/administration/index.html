@@ -1,0 +1,25 @@
+{% extends 'activites/base.html' %}
+
+{% block content %}
+
+
+<section class="hero is-dark is-fullheight-with-navbar">
+    <section id="{{ typeActivite }}" class="hero-head">
+        <div>
+            {% for typeActivite in activites %}
+            <a href="{% url 'activites:activite' Activite=typeActivite.typeActivite %}">
+                <span class="title is-1">{{ typeActivite }}</span>
+            </a>
+            {% endfor %}
+            <span class="title is-1">.ARIÈGEPYRÉNÉES</span>
+        </div>
+    </section>
+    <div class="block is-padded is-centered">
+        <div class="buttons">
+            <a class="button" href="{% url 'administration:activites' %}">Ajouter une sortie</a>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

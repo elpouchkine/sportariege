@@ -1,0 +1,79 @@
+{% extends 'activites/base.html' %}
+
+{% block content %}
+
+
+<section id="acceuil" class="hero is-fullheight-with-navbar">
+    <section id="{{ typeActivite }}" class="hero-head">
+        <div>
+            {% for typeActivite in activites %}
+            <a href="{% url 'activites:activite' Activite=typeActivite.typeActivite %}">
+                <span class="title is-1">{{ typeActivite }}</span>
+            </a>
+            {% endfor %}
+            <span class="title is-1">.ARIÈGEPYRÉNÉES</span>
+        </div>
+    </section>
+        <div class="card">
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="carousel" id="index">
+    {% for typeActivite in activites %}
+                    <div class="card-image">
+                        <figure class="image is-2by1">
+                            <img src="/static/activites/img/{{ typeActivite }}.jpg">
+                        </figure>
+                    </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="article-index" class="column">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-left">
+                        </div>
+                        <div class="media-content">
+                            <p class="title is-4">BIENVENUE EN ARIEGE!</p>
+                            <p class="subtitle is-6">Wesh wesh wesh...</p>
+                            <p>
+                                Hopla am chambon voll schwanz, machs gut knack bredele dûû picon a hopla geiss
+                                schneck bisame mes schlopp schnell, gross dû la hopla fleishwurcht. Scheni
+                                geburtstàg tchao bissame. Bisame schissabibala heim Ponchour klein dû Huguette
+                                hopla gal Chinette kartoffelsalad. Bett geburtstàg Furdenheim jetz grumbere
+                                Yeeuuu fleishwurcht. Chinette wotch a cofee bett spatzles, salat bett schiss,
+                                heim spatzles du rucksack geut scheni Sepala ech machs gut. Et hopla geiss voll
+                                choucroute, Chinette gal munster, bisous gànz schneck, le schmutz net schmutz,
+                                jetz Yeeuuu mer gross, hop schneck Flàmmeküeche, fraü choucroute Chulia Roberts,
+                                dû knack mir Melfor. Fleishwurcht bredele met chenerator lorem elsass dûû
+                                schneck hopla geiss la kartoffelsalad, sech bier elsassisch, bisous salat
+                                grumbere la rossbolla bisame chenerator spatzles gal schissabibala leverwurscht
+                                dûû Huguette la spatzles le schiss sürrkrut, picon bière la met bredele
+                                gewurztraminer.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    <section class="hero-foot">
+            <p>
+                Choucroute salami eme spatzles wotch a cofee. Bett Chinette dàchkàndelhüpser.
+                Chulie et hopla geiss la Ponchour mitt de grumbere gal! geburtstàg. S gelt !
+                heim Boumbernikel du choucroute bredele bibbala gewurztraminer vater am bisame
+                chambon fleishwurcht dû net Coopé choucroute. Am Chulien hopla geiss
+                Waltenuntenweyersniederwiller égàl la Chinette Niederhausbergen, choucroute
+                Yeeuuu kouglopf du hopla gal schwanz schneck gal! S'ech geut. Bibbala tchao 
+                bissame Huguette hopla chenerator gànz Yeeuuu geburtstàg picon bière, ìch bier
+                dr schneck gal! chenerator dû choucroute. Gànz machs gut Schwàrtzwurscht,
+                kouglopf choucroute gewurztraminer. Klein glühwein et flammekueche, mannele
+                schnell guata mer picon bière mitt hop knèkes glühwein, schwanz doch choucroute
+                a picon dûû doch riesling bisous bredele choucroute heim nett bibbala chambon
+                Oberoffenniederwald le knack dàchkàndelhüpser chambon knèkes kasnacka doch knack
+                alles net schwanz gewurztraminer.
+            </p>
+    </section>
+</section>
+
+
+{% endblock %}
